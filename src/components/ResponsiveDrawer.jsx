@@ -1,4 +1,4 @@
-import { 
+import {
   Box,
   CssBaseline,
   Divider,
@@ -7,10 +7,9 @@ import {
   ListItem,
   ListItemButton,
   ListItemIcon,
-  ListItemText, 
+  ListItemText,
 } from "@mui/material";
-import IconButton from "@mui/material/IconButton";
-import MailIcon from "@mui/icons-material/Mail";
+import IconButton from "@mui/material/IconButton"; 
 import MenuIcon from "@mui/icons-material/Menu";
 import React from "react";
 import { DRAWER_WIDTH, TABS } from "../constants/drawerConstants";
@@ -25,23 +24,22 @@ function ResponsiveDrawer(props) {
   };
 
   const drawer = (
-    <div> 
+    <div>
       <List>
         {TABS.map((tab) => (
           <ListItem key={tab.label} disablePadding>
             <Link to={tab.url} onClick={handleDrawerToggle}>
-
-            <ListItemButton>
-              <ListItemIcon>
-                <MailIcon />
-              </ListItemIcon>
-              <ListItemText primary={tab.label} />
-            </ListItemButton>
+              <ListItemButton>
+                <ListItemIcon>
+                  <tab.icon />
+                </ListItemIcon>
+                <ListItemText primary={tab.label} />
+              </ListItemButton>
             </Link>
           </ListItem>
         ))}
       </List>
-      <Divider/>
+      <Divider />
     </div>
   );
 
@@ -51,18 +49,17 @@ function ResponsiveDrawer(props) {
   return (
     <>
       <CssBaseline />
-     
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ m: 2, display: { sm: "none" } }}
-          >
-            <MenuIcon />
-          </IconButton>
-           
-   
+
+      <IconButton
+        color="inherit"
+        aria-label="open drawer"
+        edge="start"
+        onClick={handleDrawerToggle}
+        sx={{ m: 2, display: { sm: "none" } }}
+      >
+        <MenuIcon />
+      </IconButton>
+
       <Box
         component="nav"
         sx={{ width: { sm: DRAWER_WIDTH }, flexShrink: { sm: 0 } }}
@@ -99,7 +96,7 @@ function ResponsiveDrawer(props) {
         >
           {drawer}
         </Drawer>
-      </Box> 
+      </Box>
     </>
   );
 }
