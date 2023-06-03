@@ -7,7 +7,16 @@ const AppProvider = ({ children }) => {
 
   const submitForm = () => {
     setFormList([...formList, form]);
-    setForm({ name: "", age: 0, rating: 0 });
+    setForm({
+      id: Math.floor(Math.random() * 1000),
+      name: "",
+      age: 0,
+      rating: 0,
+    });
+  };
+
+  const removeFromFormList = (id) => {
+    setFormList(formList.filter((item) => item.id !== id));
   };
 
   return (
@@ -18,6 +27,7 @@ const AppProvider = ({ children }) => {
         formList,
         setFormList,
         submitForm,
+        removeFromFormList,
       }}
     >
       {children}
