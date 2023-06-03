@@ -28,6 +28,7 @@ function RegisterForm() {
       <TextField
         type="number"
         value={form.age}
+        InputProps={{ inputProps: { min: 0 } }} 
         onChange={(e) => handleChange("age", e.target.value)}
       />
 
